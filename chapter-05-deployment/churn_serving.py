@@ -16,7 +16,7 @@ with open('churn-model.bin', 'rb') as f_in:
 app = Flask('churn')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=["GET",'POST'])
 def predict():
     customer = request.get_json()
 
@@ -32,4 +32,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=9696)
+    app.run(debug=True, host='0.0.0.0', port=2525)
